@@ -17,10 +17,10 @@
 ## 準備
 ### 動作環境
 * PC
- * Chrome 最新版
+	* Chrome 最新版
 * 端末
- * iPhone iOS 10.0.1以上
- * Android
+	* iPhone iOS 10.0.1以上
+	* Android 7.0
 
 ※上記内容で動作確認をしています
 
@@ -98,14 +98,14 @@ var clientKey = "YOUR_NCMB_CLIENT_KEY";
 
 ![SDKの初期化](/readme-img/SDKの初期化.png)
 
-* このとき、シングルクォーテーション「`'`」は消さないように注意しましょう
+* このとき、ダブルクォーテーション「`"`」は消さないように注意しましょう
 
 ## ビルド
 このサンプルの動作確認には必ずビルドが必要です。また、ビルドの際には iOS/Android それぞれで認証情報の取得とその設定が必要になります。
 
 ### iOSアプリのビルド
 #### 認証情報の準備
-用意する認証情報は以下4点です（表2）。
+用意する認証情報は以下4点です（表1）。
 
 |表1|APNs認証情報|種別|
 |:---|:---|:---|
@@ -115,7 +115,7 @@ var clientKey = "YOUR_NCMB_CLIENT_KEY";
 |4|__APNs用証明書(p12)__<br>※ cer形式から .p12形式をキーチェーンアクセスより書き出す必要があります。|プッシュ|
 
 * 認証情報の取得には、Apple Developer Console へのログインが必要です
- * https://developer.apple.com/account/　
+ * https://developer.apple.com/account/
  * Apple Developer Program への登録(有償)が必要です。
  * キーチェーンアクセスを利用するため、Mac が必要です。
 
@@ -134,7 +134,7 @@ var clientKey = "YOUR_NCMB_CLIENT_KEY";
 * Monacaを開きます
 * 「設定」＞「iOSアプリ設定」を開き、「App ID」をApple Developer Console で取得した『Bundle ID』に書き換えます
 
-![Bundleid](/readme-img/Bundleid.png)
+![Bundleid](/readme-img/bundleid.png)
 
 * 「設定」＞「iOSビルド設定」を開き、証明書登録します
 * Apple Developer Console で取得した『開発用(developer)証明書(p12)』をインポートします
@@ -154,7 +154,7 @@ var clientKey = "YOUR_NCMB_CLIENT_KEY";
 
 ### Androidアプリのビルド
 #### 認証情報の準備
-Androidアプリのビルドに必要な認証情報は以下の2点です(表1)。
+Androidアプリのビルドに必要な認証情報は以下の2点です(表2)。
 
 |表2|FCM認証情報|
 |:---|:---|
@@ -168,7 +168,7 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表1)
 下記リンク先詳細を確認の上、必要な認証情報を準備してください
 
 > チュートリアル (Android) : mobile backendとFCMの連携に必要な設定
-> http://mb.cloud.nifty.com/doc/current/tutorial/push_setup_android.html　
+> http://mb.cloud.nifty.com/doc/current/tutorial/push_setup_android.html
 
 #### 認証情報の設定とビルド
 * mobile backend を開きます
@@ -210,14 +210,14 @@ var senderId = "YOUR_SENDER_ID";
 
  ![デバイストークン](/readme-img/デバイストークン.png)
 
-* 「バイストークン」という端末情報を取得しています
-* 端末情報には出フォルトで「 __channels__ 」という値が配列のフィールドを持ちます
+* 「デバイストークン」という端末情報を取得しています
+* 端末情報にはデフォルトで「 __channels__ 」という値が配列のフィールドを持ちます
  * ここにユーザー(端末)の属性を持たせて、プッシュ通知の配信グループを設定してみましょう
 
 ### 例）ユーザーの属性"apple","orange","banana"の3つのグループに分ける
 ユーザーを「りんご・オレンジ・バナナのうちどれが好きか？」でグループ分けし、「りんご」が好きなユーザーにだけプッシュ通知を配信しましょう。
 
-* 「りんご」と「バナナ」の２種類を好きなユーザーを想定して設定をしてみましょう（★想定1）
+* 「りんご」と「オレンジ」の２種類を好きなユーザーを想定して設定をしてみましょう（★想定1）
 * アプリ画面から「channels」フィールドを編集します
 * 図のように「`,`」区切りで「`apple,orange`」と入力します
 * 画面一番したの「update」ボタンをタップするとmobile backend 上の端末情報が更新されます
