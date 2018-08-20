@@ -1,6 +1,6 @@
 # 【Monaca】プッシュ通知のグルーピング配信を体験しよう！
 ## 概要
-* [ニフクラ  mobile backend](http://mb.cloud.nifty.com/)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
+* [ニフクラ  mobile backend](https://mbaas.nifcloud.com/)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
  * 例えば、apple とorange とbanana という重複登録可能なグループを用意します。ユーザー(端末)は好きなグループを選択して登録をします。アプリ運営側はその設定をベースに、例えばapple グループに属しているユーザー(端末)のみを絞り込んでプッシュ通知を送ることが出来ます♪
 
 ![イメージ](/readme-img/イメージ.png)
@@ -10,7 +10,7 @@
 ## mobile backendって何？？
 スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！
 
-注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
+注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 
 ![mobile backend](/readme-img/mobile-backend.png)
 
@@ -64,7 +64,7 @@ https://ja.monaca.io/
 * mobile backend  にログインします
 
 ![mBaaS準備1](/readme-img/mBaaS準備1.png)
-http://mb.cloud.nifty.com/
+https://mbaas.nifcloud.com/
 
 * 新しいアプリを作成します
   * アプリ名は「`SegmentPush`」と入力してください
@@ -168,7 +168,7 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表2)
 下記リンク先詳細を確認の上、必要な認証情報を準備してください
 
 > チュートリアル (Android) : mobile backendとFCMの連携に必要な設定
-> http://mb.cloud.nifty.com/doc/current/tutorial/push_setup_android.html
+> https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html
 
 #### 認証情報の設定とビルド
 * mobile backend を開きます
