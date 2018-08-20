@@ -1,6 +1,6 @@
 # 【Monaca】プッシュ通知のグルーピング配信を体験しよう！
 ## 概要
-* [ニフティクラウド mobile backend](http://mb.cloud.nifty.com/)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
+* [ニフクラ  mobile backend](http://mb.cloud.nifty.com/)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
  * 例えば、apple とorange とbanana という重複登録可能なグループを用意します。ユーザー(端末)は好きなグループを選択して登録をします。アプリ運営側はその設定をベースに、例えばapple グループに属しているユーザー(端末)のみを絞り込んでプッシュ通知を送ることが出来ます♪
 
 ![イメージ](/readme-img/イメージ.png)
@@ -121,7 +121,7 @@ var clientKey = "YOUR_NCMB_CLIENT_KEY";
 
 下記リンク先詳細を確認の上、必要な認証情報を準備してください。
 > 【iOS】プッシュ通知の受信に必要な証明書の作り方(開発用)
-> https://github.com/NIFTYCloud-mbaas/iOS_Certificate
+> https://github.com/NIFCloud-mbaas/iOS_Certificate
 
 #### 認証情報の設定とビルド
 * mobile backend を開きます
