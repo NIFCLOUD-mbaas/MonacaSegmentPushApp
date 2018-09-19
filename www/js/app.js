@@ -2,9 +2,6 @@
 var applicationKey = "YOUR_NCMB_APPLICATION_KEY";
 var clientKey = "YOUR_NCMB_CLIENT_KEY";
 
-// [FCM]送信者ID
-var senderId = "YOUR_SENDER_ID";
-
 // SDKの初期化
 var ncmb = new NCMB(applicationKey, clientKey);
 
@@ -41,7 +38,6 @@ document.addEventListener("deviceready", function() {
     window.NCMB.monaca.setDeviceToken(
         applicationKey,
         clientKey,
-        senderId,
         successCallback,
         errorCallback
     );
