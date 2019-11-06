@@ -20,7 +20,10 @@
 	* Chrome 最新版
 * 端末
 	* iPhone iOS 10.0.1以上
-	* Android 7.0
+	* MacOS Mojave v10.14.6 (18G103)
+    * Android studio: 3.4.1
+    * Simulator: Pixel 2 Android OS Version 10
+    * Unity 2019.1.14f1
 
 ※上記内容で動作確認をしています
 
