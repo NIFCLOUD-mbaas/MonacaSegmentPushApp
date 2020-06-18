@@ -1,6 +1,6 @@
 # 【Monaca】プッシュ通知のグルーピング配信を体験しよう！
 ## 概要
-* [ニフティクラウド mobile backend](http://mb.cloud.nifty.com/)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
  * 例えば、apple とorange とbanana という重複登録可能なグループを用意します。ユーザー(端末)は好きなグループを選択して登録をします。アプリ運営側はその設定をベースに、例えばapple グループに属しているユーザー(端末)のみを絞り込んでプッシュ通知を送ることが出来ます♪
 
 ![イメージ](/readme-img/イメージ.png)
@@ -10,7 +10,7 @@
 ## mobile backendって何？？
 スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！
 
-注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
+注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 
 ![mobile backend](/readme-img/mobile-backend.png)
 
@@ -25,19 +25,20 @@
 ※上記内容で動作確認をしています
 
 ### Monaca準備
-* Monacaにログインをします
 
-![Monaca準備1](/readme-img/Monaca準備1.png)
+* Monacaで新規アプリ作成し、プロジェクトをインポートする。
+    * Monacaの利用登録
+    [Monaca](https://ja.monaca.io/)
 
-https://ja.monaca.io/
+    <img src="readme-img/monaca.JPG" width="550" alt="新規プロジェクト" />
+    
+    * Monacaでインポートを選択し、新規プロジェクトを作成します。
 
-* プロジェクトをインポートします
-* 「Import Project」をクリックすると、「プロジェクトのインポート」画面が表示されます
-* 「プロジェクト名」を入力します　例）__プッシュ通知絞込み配信アプリ__
-* 「インポート方法」では、「URLを指定してインポート」を選択し、次のURLを入力します
- * `https://github.com/natsumo/MonacaSegmentPushApp/archive/master.zip`
+    <img src="readme-img/monaca_new_project.JPG" width="550" alt="新規プロジェクト" />
+    
+    * 「URLからインポートする」を選択し、URLに https://github.com/NIFCLOUD-mbaas/MonacaSegmentPushApp/archive/master.zip を指定します。
 
-![Monaca準備2](/readme-img/Monaca準備2.png)
+    <img src="readme-img/monaca_new_project_2.JPG" width="550" alt="新規プロジェクト" />
 
 * プロジェクトが作成さてたら、「開く」をクリックします
 * プロジェクトが開かれます
