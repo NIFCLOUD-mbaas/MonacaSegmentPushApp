@@ -1,6 +1,6 @@
 // [NCMB] API Key
-var applicationKey = "YOUR_NCMB_APPLICATION_KEY";
-var clientKey = "YOUR_NCMB_CLIENT_KEY";
+var applicationKey = "YOUR_APPLICATION_KEY";
+var clientKey = "YOUR_CLIENT_KEY";
 
 // SDKの初期化
 var ncmb = new NCMB(applicationKey, clientKey);

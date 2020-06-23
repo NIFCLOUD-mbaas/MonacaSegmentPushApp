@@ -38,34 +38,37 @@
     
     * 「URLからインポートする」を選択し、URLに https://github.com/NIFCLOUD-mbaas/MonacaSegmentPushApp/archive/master.zip を指定します。
 
-    <img src="readme-img/monaca_new_project_2.JPG" width="550" alt="新規プロジェクト" />
+    <img src="readme-img/monaca_new_project_2.JPG" width="550" alt="Monacaプロジェクト" />
 
 * プロジェクトが作成さてたら、「開く」をクリックします
 * プロジェクトが開かれます
 
-![Monaca準備3](/readme-img/Monaca準備3.png)
+<img src="readme-img/Monaca準備3.png" width="750" alt="Monaca準備3" />
+
+
 
 ### mobile backend SDK の導入
 * 「設定」＞「JS/CSSコンポーネントの追加と削除...」をクリックします
-* 「ncmb」と入力して「検索」をクリックします
+* 「ncmb」と入力して「検索する」をクリックします
 
-![SDK導入1](/readme-img/SDK導入1.png)
+<img src="readme-img/SDK導入1.png" width="750" alt="SDK導入1" />
 
 * 「ncmb」が表示されたら「追加」をクリックします
 * SDKのバージョンは最新（デフォルト）を選択し、「インストール」をクリックします
 * 「components/ncmb/ncmb.min.js」にチェックを入れて「保存する」をクリックします
 
-![SDK導入2](readme-img/SDK導入2.png)
+<img src="readme-img/SDK導入2.png" width="800" alt="SDK導入2" />
 
 * 一覧に表示されれば導入完了です
 
-![SDK導入3](readme-img/SDK導入3.png)
+<img src="readme-img/SDK導入3.png" width="800" alt="SDK導入3" />
+
 
 ### mobile backend 準備
 * mobile backend  にログインします
 
 ![mBaaS準備1](/readme-img/mBaaS準備1.png)
-http://mb.cloud.nifty.com/
+https://mbaas.nifcloud.com
 
 * 新しいアプリを作成します
   * アプリ名は「`SegmentPush`」と入力してください
@@ -91,8 +94,8 @@ SDKの初期化は、mobile backend を使用する場合に必ず行う作業�
 
 ```js
 // [NCMB] API Key
-var applicationKey = "YOUR_NCMB_APPLICATION_KEY";
-var clientKey = "YOUR_NCMB_CLIENT_KEY";
+var applicationKey = "YOUR_APPLICATION_KEY";
+var clientKey = "YOUR_CLIENT_KEY";
 ```
 
 * mobile backend  のダッシュボードから、APIキー（アプリケーションキーとクライアントキー）をコピーして、それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`に貼り付けます
@@ -122,7 +125,7 @@ var clientKey = "YOUR_NCMB_CLIENT_KEY";
 
 下記リンク先詳細を確認の上、必要な認証情報を準備してください。
 > 【iOS】プッシュ通知の受信に必要な証明書の作り方(開発用)
-> https://github.com/NIFTYCloud-mbaas/iOS_Certificate
+> https://github.com/NIFCLOUD-mbaas/iOS_Certificate
 
 #### 認証情報の設定とビルド
 * mobile backend を開きます
@@ -169,7 +172,7 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表2)
 下記リンク先詳細を確認の上、必要な認証情報を準備してください
 
 > チュートリアル (Android) : mobile backendとFCMの連携に必要な設定
-> http://mb.cloud.nifty.com/doc/current/tutorial/push_setup_android.html
+> https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html#gsc.tab=0
 
 #### 認証情報の設定とビルド
 * mobile backend を開きます
@@ -177,7 +180,7 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表2)
 * 「プッシュ通知の許可」の「許可する」を選択してし、「保存する」をクリックしてください
 * 「Androidプッシュ通知」の「APIキー」に、Firebase console で取得した『Server key』を貼り付けて「保存する」をクリックします
 
-![Android_mb_setting](/readme-img/Android_mb_setting.png)
+<img src="readme-img/Android_mb_setting.png" alt="Android設定" width="700px">
 
 * Monacaを開きます
 * `www/js/app.js`ファイルを開きます
@@ -192,7 +195,7 @@ var senderId = "YOUR_SENDER_ID";
 
 * 「ビルド」＞「Androidアプリのビルド」を開きます
 
-![Androidビルド](/readme-img/Androidビルド.png)
+<img src="readme-img/Androidビルド.png" alt="Androidビルド" width="700px">
 
 * 「デバッグビルド」を選択して、「ビルドを開始する」をクリックします
 * 数秒後にapkファイルが作成されますので、画面に表示されるいずれかの方法で端末にダウンロードをしてください
