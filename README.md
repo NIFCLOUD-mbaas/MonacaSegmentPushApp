@@ -48,6 +48,9 @@
 
 
 ### mobile backend SDK の導入
+
+プロジェクトに入っているncmbを更新したい場合
+
 * 「設定」＞「JS/CSSコンポーネントの追加と削除...」をクリックします
 * 「ncmb」と入力して「検索する」をクリックします
 
@@ -162,8 +165,8 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表2)
 
 |表2|FCM認証情報|
 |:---|:---|
-|1|Server key|
-|2|送信者ID|
+|1|Firebaseの秘密鍵|
+|2|google.service.jsonファイル|
 
 * 認証情報の取得は、Firebase Console にログインをして行ってください
  * https://console.firebase.google.com/
@@ -174,25 +177,51 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表2)
 > チュートリアル (Android) : mobile backendとFCMの連携に必要な設定
 > https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html#gsc.tab=0
 
+#### google.service.jsonファイルの作成
+1. [Firebase](https://console.firebase.google.com/u/0/) にログインして、新規プロジェクトを作成します。
+2. 「プロジェクトの概要」の右側にある ![設定アイコン](readme-img/settingIcon.png) をクリックして、「プロジェクトを設定」を選択します。
+3. 「全般」タブで下のマイアプリで「Android」プラットフォームのアイコンを選択します。
+
+![FirebaseSetting](readme-img/Firebasesetting.png)
+
+4. google-services.jsonを発行してアプリに登録
+* アプリケーション ID を [Android パッケージ名] フィールドに入力します。</br>
+例) com.nifcloud.MonacaSegmentPushApp
+
+![アプリ登録](readme-img/RegisterApp.png)
+
+5. google-services.jsonを追加する</br>
+* 「Download google-services.json」 をクリックして、Firebase Android 構成ファイル（google-services.json）を取得します。
+* 構成ファイルをアプリのモジュール（アプリレベル）ディレクトリに移動します。
+6. アプリで Firebase プロダクトを有効にするには、Gradle ファイルに google-services プラグインを追加します。
+
+![設定ファイルダウンロード](readme-img/DownloadFile.png)
+
+
+#### Firebaseの秘密鍵をmobile backendに設定
+
+* Firebaseのダッシュボードの左上付近の「Project OverView」という文章があります。その横に歯車ボタンがあり、そこにカーソルを合わせると文章が出てきます。その中の「プロジェクトの設定」をクリックします。
+
+* クリックするとFirebaseのプロジェクトの設定画面が出てきます。その設定画面の上のメニューの中から「サービスアカウント」をクリックします。
+
+* クリックすると以下のような画面が出てきます。この画面の中の「新しい秘密鍵の生成」をクリックして、出てくるモーダルの中の「キーを生成」をクリックします。
+* そうするとFirebaseの秘密鍵がダウンロードできます。
+
+![projectnumber](readme-img/projectnumber.png)
+
+
 #### 認証情報の設定とビルド
 * mobile backend を開きます
 * 右上の「アプリ設定」から、「プッシュ通知」を開きます
 * 「プッシュ通知の許可」の「許可する」を選択してし、「保存する」をクリックしてください
-* 「Androidプッシュ通知」の「APIキー」に、Firebase console で取得した『Server key』を貼り付けて「保存する」をクリックします
+* 「Androidプッシュ通知」の「プッシュ通知設定ファイル(json)」に、Firebase console で取得した『google-services.json』を選択して「アップロード」をクリックします  
 
-<img src="readme-img/Android_mb_setting.png" alt="Android設定" width="700px">
+![mBaaSプッシュ通知設定](/readme-img/mBaaSPushSetting.png)
 
 * Monacaを開きます
 * `www/js/app.js`ファイルを開きます
 * 5行目を見てください
-
-```js
-// [FCM]送信者ID
-var senderId = "YOUR_SENDER_ID";
-```
-
-* `SENDER_ID`を、Firebase consoleで取得した『送信者ID』に置き換えてください
-
+* "YOUR_APPLICATION_KEY"と"YOUR_CLIENT_KEY"を入れてください。
 * 「ビルド」＞「Androidアプリのビルド」を開きます
 
 <img src="readme-img/Androidビルド.png" alt="Androidビルド" width="700px">
