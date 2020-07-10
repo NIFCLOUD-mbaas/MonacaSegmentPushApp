@@ -1,6 +1,6 @@
 # 【Monaca】プッシュ通知のグルーピング配信を体験しよう！
 ## 概要
-* [ニフティクラウド mobile backend](http://mb.cloud.nifty.com/)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com)（以下、mobile backend ）の『プッシュ通知』機能を利用して、__特定のユーザー__ (端末)に絞った配信の体験ができるサンプルプロジェクトです。アプリの管理者が設定した属性ではなく、ここではユーザー(端末)自身がアプリで設定した属性に応じてプッシュ通知の出しわけを体験できます。
  * 例えば、apple とorange とbanana という重複登録可能なグループを用意します。ユーザー(端末)は好きなグループを選択して登録をします。アプリ運営側はその設定をベースに、例えばapple グループに属しているユーザー(端末)のみを絞り込んでプッシュ通知を送ることが出来ます♪
 
 ![イメージ](/readme-img/イメージ.png)
@@ -10,7 +10,7 @@
 ## mobile backendって何？？
 スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！
 
-注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
+注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 
 ![mobile backend](/readme-img/mobile-backend.png)
 
@@ -27,46 +27,53 @@
 ※上記内容で動作確認をしています
 
 ### Monaca準備
-* Monacaにログインをします
 
-![Monaca準備1](/readme-img/Monaca準備1.png)
+* Monacaで新規アプリ作成し、プロジェクトをインポートする。
+    * Monacaの利用登録
+    [Monaca](https://ja.monaca.io/)
 
-https://ja.monaca.io/
+    <img src="readme-img/monaca.JPG" width="550" alt="新規プロジェクト" />
+    
+    * Monacaでインポートを選択し、新規プロジェクトを作成します。
 
-* プロジェクトをインポートします
-* 「Import Project」をクリックすると、「プロジェクトのインポート」画面が表示されます
-* 「プロジェクト名」を入力します　例）__プッシュ通知絞込み配信アプリ__
-* 「インポート方法」では、「URLを指定してインポート」を選択し、次のURLを入力します
- * `https://github.com/natsumo/MonacaSegmentPushApp/archive/master.zip`
+    <img src="readme-img/monaca_new_project.JPG" width="550" alt="新規プロジェクト" />
+    
+    * 「URLからインポートする」を選択し、URLに https://github.com/NIFCLOUD-mbaas/MonacaSegmentPushApp/archive/master.zip を指定します。
 
-![Monaca準備2](/readme-img/Monaca準備2.png)
+    <img src="readme-img/monaca_new_project_2.JPG" width="550" alt="Monacaプロジェクト" />
 
 * プロジェクトが作成さてたら、「開く」をクリックします
 * プロジェクトが開かれます
 
-![Monaca準備3](/readme-img/Monaca準備3.png)
+<img src="readme-img/Monaca準備3.png" width="750" alt="Monaca準備3" />
+
+
 
 ### mobile backend SDK の導入
-* 「設定」＞「JS/CSSコンポーネントの追加と削除...」をクリックします
-* 「ncmb」と入力して「検索」をクリックします
 
-![SDK導入1](/readme-img/SDK導入1.png)
+プロジェクトに入っているncmbを更新したい場合
+
+* 「設定」＞「JS/CSSコンポーネントの追加と削除...」をクリックします
+* 「ncmb」と入力して「検索する」をクリックします
+
+<img src="readme-img/SDK導入1.png" width="750" alt="SDK導入1" />
 
 * 「ncmb」が表示されたら「追加」をクリックします
 * SDKのバージョンは最新（デフォルト）を選択し、「インストール」をクリックします
 * 「components/ncmb/ncmb.min.js」にチェックを入れて「保存する」をクリックします
 
-![SDK導入2](readme-img/SDK導入2.png)
+<img src="readme-img/SDK導入2.png" width="800" alt="SDK導入2" />
 
 * 一覧に表示されれば導入完了です
 
-![SDK導入3](readme-img/SDK導入3.png)
+<img src="readme-img/SDK導入3.png" width="800" alt="SDK導入3" />
+
 
 ### mobile backend 準備
 * mobile backend  にログインします
 
 ![mBaaS準備1](/readme-img/mBaaS準備1.png)
-http://mb.cloud.nifty.com/
+https://mbaas.nifcloud.com
 
 * 新しいアプリを作成します
   * アプリ名は「`SegmentPush`」と入力してください
@@ -92,8 +99,8 @@ SDKの初期化は、mobile backend を使用する場合に必ず行う作業�
 
 ```js
 // [NCMB] API Key
-var applicationKey = "YOUR_NCMB_APPLICATION_KEY";
-var clientKey = "YOUR_NCMB_CLIENT_KEY";
+var applicationKey = "YOUR_APPLICATION_KEY";
+var clientKey = "YOUR_CLIENT_KEY";
 ```
 
 * mobile backend  のダッシュボードから、APIキー（アプリケーションキーとクライアントキー）をコピーして、それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`に貼り付けます
@@ -123,7 +130,7 @@ var clientKey = "YOUR_NCMB_CLIENT_KEY";
 
 下記リンク先詳細を確認の上、必要な認証情報を準備してください。
 > 【iOS】プッシュ通知の受信に必要な証明書の作り方(開発用)
-> https://github.com/NIFTYCloud-mbaas/iOS_Certificate
+> https://github.com/NIFCLOUD-mbaas/iOS_Certificate
 
 #### 認証情報の設定とビルド
 * mobile backend を開きます
@@ -160,8 +167,8 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表2)
 
 |表2|FCM認証情報|
 |:---|:---|
-|1|Server key|
-|2|送信者ID|
+|1|Firebaseの秘密鍵|
+|2|google.service.jsonファイル|
 
 * 認証情報の取得は、Firebase Console にログインをして行ってください
  * https://console.firebase.google.com/
@@ -170,30 +177,56 @@ Androidアプリのビルドに必要な認証情報は以下の2点です(表2)
 下記リンク先詳細を確認の上、必要な認証情報を準備してください
 
 > チュートリアル (Android) : mobile backendとFCMの連携に必要な設定
-> http://mb.cloud.nifty.com/doc/current/tutorial/push_setup_android.html
+> https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html#gsc.tab=0
+
+#### google.service.jsonファイルの作成
+1. [Firebase](https://console.firebase.google.com/u/0/) にログインして、新規プロジェクトを作成します。
+2. 「プロジェクトの概要」の右側にある ![設定アイコン](readme-img/settingIcon.png) をクリックして、「プロジェクトを設定」を選択します。
+3. 「全般」タブで下のマイアプリで「Android」プラットフォームのアイコンを選択します。
+
+![FirebaseSetting](readme-img/Firebasesetting.png)
+
+4. google-services.jsonを発行してアプリに登録
+* アプリケーション ID を [Android パッケージ名] フィールドに入力します。</br>
+例) com.nifcloud.MonacaSegmentPushApp
+
+![アプリ登録](readme-img/RegisterApp.png)
+
+5. google-services.jsonを追加する</br>
+* 「Download google-services.json」 をクリックして、Firebase Android 構成ファイル（google-services.json）を取得します。
+* 構成ファイルをアプリのモジュール（アプリレベル）ディレクトリに移動します。
+6. アプリで Firebase プロダクトを有効にするには、Gradle ファイルに google-services プラグインを追加します。
+
+![設定ファイルダウンロード](readme-img/DownloadFile.png)
+
+
+#### Firebaseの秘密鍵をmobile backendに設定
+
+* Firebaseのダッシュボードの左上付近の「Project OverView」という文章があります。その横に歯車ボタンがあり、そこにカーソルを合わせると文章が出てきます。その中の「プロジェクトの設定」をクリックします。
+
+* クリックするとFirebaseのプロジェクトの設定画面が出てきます。その設定画面の上のメニューの中から「サービスアカウント」をクリックします。
+
+* クリックすると以下のような画面が出てきます。この画面の中の「新しい秘密鍵の生成」をクリックして、出てくるモーダルの中の「キーを生成」をクリックします。
+* そうするとFirebaseの秘密鍵がダウンロードできます。
+
+![projectnumber](readme-img/projectnumber.png)
+
 
 #### 認証情報の設定とビルド
 * mobile backend を開きます
 * 右上の「アプリ設定」から、「プッシュ通知」を開きます
 * 「プッシュ通知の許可」の「許可する」を選択してし、「保存する」をクリックしてください
-* 「Androidプッシュ通知」の「APIキー」に、Firebase console で取得した『Server key』を貼り付けて「保存する」をクリックします
+* 「Androidプッシュ通知」の「プッシュ通知設定ファイル(json)」に、Firebase console で取得した『google-services.json』を選択して「アップロード」をクリックします  
 
-![Android_mb_setting](/readme-img/Android_mb_setting.png)
+![mBaaSプッシュ通知設定](/readme-img/mBaaSPushSetting.png)
 
 * Monacaを開きます
 * `www/js/app.js`ファイルを開きます
 * 5行目を見てください
-
-```js
-// [FCM]送信者ID
-var senderId = "YOUR_SENDER_ID";
-```
-
-* `SENDER_ID`を、Firebase consoleで取得した『送信者ID』に置き換えてください
-
+* "YOUR_APPLICATION_KEY"と"YOUR_CLIENT_KEY"を入れてください。
 * 「ビルド」＞「Androidアプリのビルド」を開きます
 
-![Androidビルド](/readme-img/Androidビルド.png)
+<img src="readme-img/Androidビルド.png" alt="Androidビルド" width="700px">
 
 * 「デバッグビルド」を選択して、「ビルドを開始する」をクリックします
 * 数秒後にapkファイルが作成されますので、画面に表示されるいずれかの方法で端末にダウンロードをしてください
