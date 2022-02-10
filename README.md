@@ -19,8 +19,8 @@
 * PC
 	* Chrome 最新版
 * 端末
-	* iPhone iOS 10.0.1以上
-	* MacOS Mojave v10.14.6 (18G103)
+	* iPhone iOS 15.0.1以上
+	* MacOS Big Sur v11.5.2
     * Android studio: 3.4.1
     * Simulator: Pixel 2 Android OS Version 10
 
