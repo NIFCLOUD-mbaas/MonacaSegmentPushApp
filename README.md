@@ -20,9 +20,9 @@
 	* Chrome 最新版
 * 端末
 	* iPhone iOS 15.0.1以上
-	* MacOS Big Sur v11.5.2
-    * Android studio: 3.4.1
-    * Simulator: Pixel 2 Android OS Version 10
+	* MacOS Big Sur 11.6 
+  * Android Studio Arctic Fox 2020.3.1
+  * Pixle 3 - Android 12 (Simulator)
 
 ※上記内容で動作確認をしています
 
