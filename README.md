@@ -19,8 +19,10 @@
 * PC
 	* Chrome 最新版
 * 端末
-	* iPhone iOS 10.0.1以上
-	* MacOS Big Sur 11.6 
+    * Cordova 10.0
+    * MacOS Big Sur 11.6 
+    * Xcode Version 13.0
+    * iPhone 11 pro max - iOS 15.2.1
     * Android Studio Arctic Fox 2020.3.1
     * Pixle 3 - Android 12 (Simulator)
 
